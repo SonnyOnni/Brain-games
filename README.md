@@ -5,4 +5,7 @@
 
 
 Game #1: Brain-even
-https://asciinema.org/a/497182
+Preview: https://asciinema.org/a/497182
+
+Game #2: Brain-calc
+Preview: https://asciinema.org/a/497814
