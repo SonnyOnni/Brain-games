@@ -1,16 +1,26 @@
 /* eslint-disable linebreak-style */
 import readlineSync from 'readline-sync';
 
-const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameRules = 'What is the result of the expression?';
 const generateRandomNumber = () => Math.round(Math.random() * 100);
-const isEven = (num) => num % 2 === 0;
-// eslint-disable-next-line no-unused-vars
+const getResult = (operand1, operand2, operation) => {
+  switch (operation) {
+    case '+': return operand1 + operand2;
+    case '-': return operand1 - operand2;
+    case '*': return operand1 * operand2;
+    default: return NaN;
+  }
+};
 const playRound = () => {
-  const number = generateRandomNumber();
-  const answer = readlineSync.question(`Question: ${number} \nYour answer: `);
-  const correctAnswer = isEven(number) ? 'yes' : 'no';
+  const firstNumber = generateRandomNumber();
+  const secondNumber = generateRandomNumber();
+  const mathOperators = ['+', '-', '*'];
+  const rand = Math.floor(Math.random() * mathOperators.length);
+  const randValue = mathOperators[rand];
+  const answer = readlineSync.question(`Question: ${firstNumber} ${randValue} ${secondNumber} \nYour answer: `);
+  const correctAnswer = getResult(firstNumber, secondNumber, randValue);
 
-  if (answer === correctAnswer) {
+  if (Number(answer) === correctAnswer) {
     console.log('Correct!');
     return true;
   } console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
