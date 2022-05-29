@@ -5,7 +5,13 @@
 
 
 Game #1: Brain-even
+
 Preview: https://asciinema.org/a/497182
 
 Game #2: Brain-calc
+
 Preview: https://asciinema.org/a/497814
+
+Game #3: Brain-gcd
+
+Preview: https://asciinema.org/a/497927
