@@ -6,6 +6,13 @@ const gameRules = 'Find the greatest common divisor of given numbers.';
 const generateRandomNumber = () => Math.round(Math.random() * 100);
 
 const getTheLargestDivider = (firstNumber, secondNumber) => {
+  if (firstNumber === 0) {
+    return secondNumber;
+  }
+  if (secondNumber === 0) {
+    return firstNumber;
+  }
+
   if (firstNumber === 1 || secondNumber === 1) {
     return 1;
   }
