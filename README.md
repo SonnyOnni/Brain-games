@@ -15,3 +15,8 @@ Preview: https://asciinema.org/a/497814
 Game #3: Brain-gcd
 
 Preview: https://asciinema.org/a/497927
+
+Game #4: Brain-progression
+
+Preview: https://asciinema.org/a/498062
+
