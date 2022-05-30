@@ -5,22 +5,24 @@ import playGame from '../src/index.js';
 const gameRules = 'What number is missing in the progression?';
 
 const generateRandomNumber = () => Math.round(Math.random() * 100);
-const generateRandomDecimalNumber = () => Math.round(Math.random() * 10);
+const generateRandomDecimalNumber = (min, max) => Math.round(Math.random() * (max - min) + min);
 const getRandomFloat = (min, max) => Math.round(Math.random() * (max - min) + min);
 
 const getProgressionString = (base, diff, count, spaceItem) => {
   let startNumber = base;
-  const progressionArr = [startNumber];
-  let lostNumber;
+  const progressionArr = [];
+  let lostNumber = startNumber;
 
-  for (let i = 1; i < count; i += 1) {
+  for (let i = 0; i < count; i += 1) {
     if (i !== spaceItem) {
       startNumber += diff;
       progressionArr.push(startNumber);
-    } else {
+    } else if (i === spaceItem) {
       startNumber += diff;
       lostNumber = startNumber;
       progressionArr.push('..');
+    } else {
+      progressionArr[0] = '..';
     }
   }
 
@@ -31,7 +33,7 @@ const getProgressionString = (base, diff, count, spaceItem) => {
 
 const playRound = () => {
   const baseNumber = generateRandomNumber();
-  const diffNumber = generateRandomDecimalNumber();
+  const diffNumber = generateRandomDecimalNumber(1, 10);
   const countNumber = getRandomFloat(5, 10);
   const lostItem = getRandomFloat(0, countNumber - 1);
   const question = `Question: ${getProgressionString(baseNumber, diffNumber, countNumber, lostItem)[0]}`;
