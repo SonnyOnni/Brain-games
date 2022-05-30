@@ -7,7 +7,6 @@ const generateRandomNumber = () => Math.round(Math.random() * 100);
 
 const isEven = (num) => num % 2 === 0;
 
-// eslint-disable-next-line no-unused-vars
 const playRound = () => {
   const number = generateRandomNumber();
   const question = `Question: ${number}`;
