@@ -33,7 +33,7 @@ const playRound = () => {
   const baseNumber = generateRandomNumber();
   const diffNumber = generateRandomDecimalNumber();
   const countNumber = getRandomFloat(5, 10);
-  const lostItem = getRandomFloat(0, countNumber);
+  const lostItem = getRandomFloat(0, countNumber - 1);
   const question = `Question: ${getProgressionString(baseNumber, diffNumber, countNumber, lostItem)[0]}`;
   const correctAnswer = getProgressionString(baseNumber, diffNumber, countNumber, lostItem)[1];
   return [question, correctAnswer];
