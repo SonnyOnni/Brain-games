@@ -20,7 +20,7 @@ The essence of the game is as follows: the user is shown a random number. And he
 Run game:
 
 ```
-make brain-even
+brain-even
 ```
 
 [![asciicast](https://asciinema.org/a/497182.svg)](https://asciinema.org/a/497182)
@@ -33,7 +33,7 @@ The essence of the game is as follows: the user is shown a random mathematical e
 Run game:
 
 ```
-make brain-calc
+brain-calc
 ```
 
 [![asciicast](https://asciinema.org/a/497814.svg)](https://asciinema.org/a/497814)
@@ -44,7 +44,7 @@ The essence of the game is as follows: the user is shown two random numbers. The
 Run game:
 
 ```
-make brain-gcd
+brain-gcd
 ```
 
 [![asciicast](https://asciinema.org/a/497927.svg)](https://asciinema.org/a/497927)
@@ -57,7 +57,7 @@ The user have to find out the number in an arithmetic progression that is hidden
 Run game:
 
 ```
-make brain-progression
+brain-progression
 ```
 [![asciicast](https://asciinema.org/a/498062.svg)](https://asciinema.org/a/498062)
 
@@ -67,7 +67,7 @@ The user have to find out if the number is prime. The user must give the correct
 Run game:
 
 ```
-make brain-prime
+brain-prime
 ```
 [![asciicast](https://asciinema.org/a/498096.svg)](https://asciinema.org/a/498096)
 
