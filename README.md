@@ -9,7 +9,7 @@ A set of console games for the Hexlet front-end development course study project
 
 ### Installation and setup:
 ```
-git clone git@github.com:heyanny2/frontend-project-lvl1.git
+git clone git@github.com:SonnyOnni/frontend-project-lvl1.git
 npm ci
 npm link
 ```
