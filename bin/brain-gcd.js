@@ -3,7 +3,9 @@
 import playGame from '../src/index.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
+
 const generateRandomNumber = () => Math.round(Math.random() * 100);
+
 const getTheLargestDivider = (firstNumber, secondNumber) => {
   if (firstNumber === 1 || secondNumber === 1) {
     return 1;
@@ -23,6 +25,7 @@ const getTheLargestDivider = (firstNumber, secondNumber) => {
     divider -= 1;
   }
 };
+
 const playRound = () => {
   const firstNumber = generateRandomNumber();
   const secondNumber = generateRandomNumber();

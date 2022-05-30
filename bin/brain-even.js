@@ -2,8 +2,11 @@
 import playGame from '../src/index.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 const generateRandomNumber = () => Math.round(Math.random() * 100);
+
 const isEven = (num) => num % 2 === 0;
+
 // eslint-disable-next-line no-unused-vars
 const playRound = () => {
   const number = generateRandomNumber();

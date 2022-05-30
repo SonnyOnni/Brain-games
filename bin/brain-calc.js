@@ -2,7 +2,9 @@
 import playGame from '../src/index.js';
 
 const gameRules = 'What is the result of the expression?';
+
 const generateRandomNumber = () => Math.round(Math.random() * 100);
+
 const getResult = (operand1, operand2, operation) => {
   switch (operation) {
     case '+': return operand1 + operand2;
@@ -11,6 +13,7 @@ const getResult = (operand1, operand2, operation) => {
     default: return NaN;
   }
 };
+
 const playRound = () => {
   const firstNumber = generateRandomNumber();
   const secondNumber = generateRandomNumber();
