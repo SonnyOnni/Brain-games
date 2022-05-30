@@ -20,3 +20,7 @@ Game #4: Brain-progression
 
 Preview: https://asciinema.org/a/498062
 
+Game #5: Brain-prime
+
+Preview: https://asciinema.org/a/498096
+
