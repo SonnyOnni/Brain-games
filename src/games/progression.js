@@ -1,10 +1,7 @@
 import playGame from '../index.js';
+import generateRandomNumber from '../random-numbers.js';
 
 const gameRules = 'What number is missing in the progression?';
-
-const generateRandomNumber = () => Math.round(Math.random() * 100);
-const generateRandomDecimalNumber = (min, max) => Math.round(Math.random() * (max - min) + min);
-const getRandomFloat = (min, max) => Math.round(Math.random() * (max - min) + min);
 
 const getProgressionString = (base, diff, count, spaceItem) => {
   let startNumber = base;
@@ -30,12 +27,17 @@ const getProgressionString = (base, diff, count, spaceItem) => {
 };
 
 const playRound = () => {
-  const baseNumber = generateRandomNumber();
-  const diffNumber = generateRandomDecimalNumber(1, 10);
-  const countNumber = getRandomFloat(5, 10);
-  const lostItem = getRandomFloat(0, countNumber - 1);
-  const question = `Question: ${getProgressionString(baseNumber, diffNumber, countNumber, lostItem)[0]}`;
-  const correctAnswer = getProgressionString(baseNumber, diffNumber, countNumber, lostItem)[1];
+  const minProgressionLength = 5;
+  const maxProgressionLength = 10;
+  const minProgressionStep = 1;
+  const maxProgressionStep = 10;
+  const baseNumber = generateRandomNumber(0, 100);
+  const progressionStep = generateRandomNumber(minProgressionStep, maxProgressionStep);
+  const progressionLength = generateRandomNumber(minProgressionLength, maxProgressionLength);
+  const hiddenNumberPosition = generateRandomNumber(0, progressionLength - 1);
+  const question = `Question: ${getProgressionString(baseNumber, progressionStep, progressionLength, hiddenNumberPosition)[0]}`;
+  // eslint-disable-next-line max-len
+  const correctAnswer = getProgressionString(baseNumber, progressionStep, progressionLength, hiddenNumberPosition)[1];
   return [question, correctAnswer];
 };
 

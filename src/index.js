@@ -5,7 +5,10 @@ const playGame = (playRound, gameRules) => {
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${userName}!`);
   console.log(gameRules);
-  for (let i = 0; i < 3; i += 1) {
+
+  const gameRounds = 3;
+
+  for (let i = 1; i <= gameRounds; i += 1) {
     const [question, correctAnswer] = playRound();
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -15,7 +18,7 @@ const playGame = (playRound, gameRules) => {
       break;
     }
     console.log('Correct!');
-    if (i === 2) {
+    if (i === gameRounds) {
       console.log(`Congratulations, ${userName}!`);
     }
   }

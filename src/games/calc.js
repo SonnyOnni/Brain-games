@@ -1,8 +1,7 @@
 import playGame from '../index.js';
+import generateRandomNumber from '../random-numbers.js';
 
 const gameRules = 'What is the result of the expression?';
-
-const generateRandomNumber = () => Math.round(Math.random() * 100);
 
 const getResult = (operand1, operand2, operation) => {
   switch (operation) {
@@ -14,8 +13,8 @@ const getResult = (operand1, operand2, operation) => {
 };
 
 const playRound = () => {
-  const firstNumber = generateRandomNumber();
-  const secondNumber = generateRandomNumber();
+  const firstNumber = generateRandomNumber(0, 100);
+  const secondNumber = generateRandomNumber(0, 100);
   const mathOperators = ['+', '-', '*'];
   const rand = Math.floor(Math.random() * mathOperators.length);
   const randValue = mathOperators[rand];
