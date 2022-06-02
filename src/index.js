@@ -9,11 +9,11 @@ const playGame = (playRound, gameRules) => {
   const gameRounds = 3;
 
   for (let i = 1; i <= gameRounds; i += 1) {
-    const [question, answer] = playRound();
+    const [question, expectedAnswer] = playRound();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer !== answer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+    if (userAnswer !== expectedAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

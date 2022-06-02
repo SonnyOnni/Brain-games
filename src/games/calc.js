@@ -19,8 +19,8 @@ const playRound = () => {
   const randomIndexOperator = generateRandomNumber(0, 2);
   const operator = mathOperators[randomIndexOperator];
   const question = `${firstNumber} ${operator} ${secondNumber}`;
-  const answer = String(getResult(firstNumber, secondNumber, operator));
-  return [question, answer];
+  const expectedAnswer = String(getResult(firstNumber, secondNumber, operator));
+  return [question, expectedAnswer];
 };
 
 const playCalc = () => {

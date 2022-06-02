@@ -10,8 +10,8 @@ const playRound = () => {
   const firstNumber = generateRandomNumber(0, 100);
   const secondNumber = generateRandomNumber(0, 100);
   const question = `${firstNumber} ${secondNumber}`;
-  const answer = String(getTheLargestDivider(firstNumber, secondNumber));
-  return [question, answer];
+  const expectedAnswer = String(getTheLargestDivider(firstNumber, secondNumber));
+  return [question, expectedAnswer];
 };
 
 const playGcd = () => {

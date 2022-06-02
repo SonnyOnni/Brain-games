@@ -42,8 +42,8 @@ const playRound = () => {
   const progresiionString = getProgressionString(baseNumber, progressionStep, progressionLength);
 
   const question = progresiionString[0];
-  const answer = String(progresiionString[1]);
-  return [question, answer];
+  const expectedAnswer = String(progresiionString[1]);
+  return [question, expectedAnswer];
 };
 
 const playProgression = () => {

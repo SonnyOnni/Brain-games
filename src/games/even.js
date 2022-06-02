@@ -8,8 +8,8 @@ const isEven = (num) => num % 2 === 0;
 const playRound = () => {
   const number = generateRandomNumber(0, 100);
   const question = number;
-  const answer = isEven(number) ? 'yes' : 'no';
-  return [question, answer];
+  const expectedAnswer = isEven(number) ? 'yes' : 'no';
+  return [question, expectedAnswer];
 };
 
 const playEven = () => {
