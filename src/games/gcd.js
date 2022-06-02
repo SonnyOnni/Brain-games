@@ -9,9 +9,9 @@ const getTheLargestDivider = (x, y) => (x !== 0 ? getTheLargestDivider(y % x, x)
 const playRound = () => {
   const firstNumber = generateRandomNumber(0, 100);
   const secondNumber = generateRandomNumber(0, 100);
-  const question = `Question: ${firstNumber} ${secondNumber}`;
-  const correctAnswer = getTheLargestDivider(firstNumber, secondNumber);
-  return [question, correctAnswer];
+  const question = `${firstNumber} ${secondNumber}`;
+  const answer = String(getTheLargestDivider(firstNumber, secondNumber));
+  return [question, answer];
 };
 
 const playGcd = () => {

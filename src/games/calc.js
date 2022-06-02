@@ -16,11 +16,11 @@ const playRound = () => {
   const firstNumber = generateRandomNumber(0, 100);
   const secondNumber = generateRandomNumber(0, 100);
   const mathOperators = ['+', '-', '*'];
-  const rand = Math.floor(Math.random() * mathOperators.length);
-  const randValue = mathOperators[rand];
-  const question = `Question: ${firstNumber} ${randValue} ${secondNumber}`;
-  const correctAnswer = getResult(firstNumber, secondNumber, randValue);
-  return [question, correctAnswer];
+  const randomIndexOperators = generateRandomNumber(0, 2);
+  const operator = mathOperators[randomIndexOperators];
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const answer = String(getResult(firstNumber, secondNumber, operator));
+  return [question, answer];
 };
 
 const playCalc = () => {

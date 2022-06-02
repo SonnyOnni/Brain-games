@@ -1,12 +1,14 @@
+/* eslint-disable max-len */
 import playGame from '../index.js';
 import generateRandomNumber from '../random-numbers.js';
 
 const gameRules = 'What number is missing in the progression?';
 
-const getProgressionString = (base, diff, count, spaceItem) => {
+const getProgressionString = (base, diff, count) => {
   let startNumber = base;
   const progressionArr = [];
   let lostNumber = startNumber;
+  const spaceItem = generateRandomNumber(0, count - 1);
 
   for (let i = 0; i < count; i += 1) {
     if (i !== spaceItem) {
@@ -27,18 +29,21 @@ const getProgressionString = (base, diff, count, spaceItem) => {
 };
 
 const playRound = () => {
+  const baseNumber = generateRandomNumber(0, 100);
+
   const minProgressionLength = 5;
   const maxProgressionLength = 10;
+  const progressionLength = generateRandomNumber(minProgressionLength, maxProgressionLength);
+
   const minProgressionStep = 1;
   const maxProgressionStep = 10;
-  const baseNumber = generateRandomNumber(0, 100);
   const progressionStep = generateRandomNumber(minProgressionStep, maxProgressionStep);
-  const progressionLength = generateRandomNumber(minProgressionLength, maxProgressionLength);
-  const hiddenNumberPosition = generateRandomNumber(0, progressionLength - 1);
-  const question = `Question: ${getProgressionString(baseNumber, progressionStep, progressionLength, hiddenNumberPosition)[0]}`;
-  // eslint-disable-next-line max-len
-  const correctAnswer = getProgressionString(baseNumber, progressionStep, progressionLength, hiddenNumberPosition)[1];
-  return [question, correctAnswer];
+
+  const progresiionString = getProgressionString(baseNumber, progressionStep, progressionLength);
+
+  const question = progresiionString[0];
+  const answer = String(progresiionString[1]);
+  return [question, answer];
 };
 
 const playProgression = () => {

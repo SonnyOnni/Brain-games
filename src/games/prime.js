@@ -21,9 +21,9 @@ const isPrime = (num) => {
 
 const playRound = () => {
   const number = generateRandomNumber(0, 100);
-  const question = `Question: ${number}`;
-  const correctAnswer = isPrime(number) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  const question = number;
+  const answer = isPrime(number) ? 'yes' : 'no';
+  return [question, answer];
 };
 
 const playPrime = () => {
