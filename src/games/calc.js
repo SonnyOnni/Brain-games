@@ -16,8 +16,8 @@ const playRound = () => {
   const firstNumber = generateRandomNumber(0, 100);
   const secondNumber = generateRandomNumber(0, 100);
   const mathOperators = ['+', '-', '*'];
-  const randomIndexOperators = generateRandomNumber(0, 2);
-  const operator = mathOperators[randomIndexOperators];
+  const randomIndexOperator = generateRandomNumber(0, 2);
+  const operator = mathOperators[randomIndexOperator];
   const question = `${firstNumber} ${operator} ${secondNumber}`;
   const answer = String(getResult(firstNumber, secondNumber, operator));
   return [question, answer];
